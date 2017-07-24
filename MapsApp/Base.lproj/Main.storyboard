@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VTI-x1-lE7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TWp-L5-53F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="1027"/>
+        </scene>
+        <!--Carona-->
+        <scene sceneID="IFS-td-8Bb">
+            <objects>
+                <viewController storyboardIdentifier="CaronaController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jGl-23-3HS" customClass="CaronaController" customModule="MapsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JhN-F4-X6P"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYh-e7-7lB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Oy-Kr-ide">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Carona" id="Mpl-gD-gWu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Aj-2E-gsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895" y="-427"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BBU-3w-w9T">
+            <objects>
+                <tabBarController id="VTI-x1-lE7" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="JOO-HC-etP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jGl-23-3HS" kind="relationship" relationship="viewControllers" id="AzP-ad-cwG"/>
+                        <segue destination="dWg-SP-CXN" kind="relationship" relationship="viewControllers" id="APj-Ej-dNl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulj-Kw-1RL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="-87"/>
+        </scene>
+        <!--Lugares-->
+        <scene sceneID="hiB-8L-EW5">
+            <objects>
+                <navigationController id="dWg-SP-CXN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lugares" id="biy-cr-V4O"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iy2-Qn-kDc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5tn-f6-AcJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZM-he-e4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="266"/>
+        </scene>
+    </scenes>
+</document>
