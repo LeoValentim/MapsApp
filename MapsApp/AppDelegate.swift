@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UberRides
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Configuration.setSandboxEnabled(true)
+        Configuration.setFallbackEnabled(false)
+        
+        RidesAppDelegate.sharedInstance.application(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let handledURL = RidesAppDelegate.sharedInstance.application(application, openURL: url as URL, sourceApplication: sourceApplication, annotation: annotation as AnyObject)
+        
+        if (!handledURL) {
+            // Other URL parsing logic
+        }
+        
         return true
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VTI-x1-lE7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VTI-x1-lE7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,6 +27,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1894" y="1027"/>
+        </scene>
+        <!--Api-->
+        <scene sceneID="C7C-Jv-RHA">
+            <objects>
+                <viewController storyboardIdentifier="ApiRideController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0AC-XU-h9b" customClass="ApiRideController" customModule="MapsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uzF-c6-Sie"/>
+                        <viewControllerLayoutGuide type="bottom" id="ana-VR-U6u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZc-ic-6YS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJg-le-vSx">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="apiAction:" destination="0AC-XU-h9b" eventType="touchUpInside" id="6vc-aC-5gK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WJg-le-vSx" firstAttribute="centerY" secondItem="KZc-ic-6YS" secondAttribute="centerY" id="lI1-lX-miQ"/>
+                            <constraint firstItem="WJg-le-vSx" firstAttribute="centerX" secondItem="KZc-ic-6YS" secondAttribute="centerX" id="oOB-q3-fke"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Api" id="20J-ex-3HB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mr-Xl-YL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="-1192"/>
         </scene>
         <!--Carona-->
         <scene sceneID="IFS-td-8Bb">
@@ -59,6 +91,7 @@
                     <connections>
                         <segue destination="jGl-23-3HS" kind="relationship" relationship="viewControllers" id="AzP-ad-cwG"/>
                         <segue destination="dWg-SP-CXN" kind="relationship" relationship="viewControllers" id="APj-Ej-dNl"/>
+                        <segue destination="0AC-XU-h9b" kind="relationship" relationship="viewControllers" id="vgp-eT-uUL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulj-Kw-1RL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,7 +103,7 @@
             <objects>
                 <navigationController id="dWg-SP-CXN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lugares" id="biy-cr-V4O"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iy2-Qn-kDc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iy2-Qn-kDc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

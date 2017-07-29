@@ -45,6 +45,7 @@
 	<string>$(PRODUCT_NAME) location use.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) location use.</string>
+    
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>uber</string>
@@ -63,6 +64,24 @@
             <key>URIString</key>
             <string>http://localhost/</string>
         </dict>
+        <dict>
+            <key>UberCallbackURIType</key>
+            <string>Implicit</string>
+            <key>URIString</key>
+            <string>https://localhost/</string>
+        </dict>
+        <dict>
+            <key>UberCallbackURIType</key>
+            <string>AuthorizationCode</string>
+            <key>URIString</key>
+            <string>https://localhost/</string>
+        </dict>
+        <dict>
+            <key>UberCallbackURIType</key>
+            <string>Native</string>
+            <key>URIString</key>
+            <string>mapsApp://login</string>
+        </dict>
     </array>
     <key>UberServerToken</key>
     <string>XzBnL_B_T9kqAb08JEutW5U196sH8rpMRtA1e2Kd</string>
@@ -74,7 +93,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>sdkexample</string>
+                <string>mapsApp</string>
             </array>
         </dict>
     </array>

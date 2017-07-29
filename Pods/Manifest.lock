@@ -7,12 +7,14 @@ PODS:
   - GooglePlaces (2.3.1):
     - GoogleMaps/Base (= 2.3.1)
   - ObjectMapper (2.2.7)
+  - SwiftyJSON (3.1.4)
   - UberRides (0.5.2):
     - ObjectMapper (~> 2.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - SwiftyJSON
   - UberRides (from `https://github.com/long/rides-ios-sdk.git`, branch `swift-3-dev`)
 
 EXTERNAL SOURCES:
@@ -29,8 +31,9 @@ SPEC CHECKSUMS:
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 1a996c1513324a5bcb39260f51df0746d8ad9a10
+PODFILE CHECKSUM: 8e0146c48cacd5ecd106160ea1b720d01eecc16b
 
 COCOAPODS: 1.2.1
