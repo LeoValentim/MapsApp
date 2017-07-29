@@ -7,25 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 import GoogleMaps
 
-class ApiRideController: UIViewController {
+class ApiRideController: UIViewController, GoogleMapControllerDelegate {
     
-    var mapView: GMSMapView?
-
+    @IBOutlet weak var locationsFieldsView: UIView!
+    @IBOutlet weak var googleMapContainer: UIView!
+    
+    var oldLocationsFieldsViewBounds: CGRect = CGRect.zero
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GMSServices.provideAPIKey("AIzaSyBA4L5QBzzd6NvkQb958VYD4YFcLb_bPfs")
-        let camera = GMSCameraPosition.camera(withLatitude: -23.642446, longitude: -46.637669, zoom: 12)
-        self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        self.view = self.mapView
-        
-        let currentLocation = CLLocationCoordinate2D(latitude: -23.642446, longitude: -46.637669)
-        let marker = GMSMarker(position: currentLocation)
-        marker.title = "Minha Casa"
-        marker.map = self.mapView
-        // Do any additional setup after loading the view.
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +27,39 @@ class ApiRideController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func apiAction(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GoogleMapController,
+            segue.identifier == "GoogleMapControllerSegue" {
+            vc.delegate = self
+        }
+    }
+    
+    func googleMapView(_ mapView: GMSMapView, didClear googleMapController: GoogleMapController) {
         
+    }
+    
+    func googleMapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D, googleMapController: GoogleMapController) {
+        let marker = GMSMarker(position: coordinate)
+        marker.title = "Destino"
+        marker.map = mapView
+        
+        if let currentLocation = googleMapController.currentLocation {
+            let origin = "\(currentLocation.latitude),\(currentLocation.longitude)"
+            let destination = "\(coordinate.latitude),\(coordinate.longitude)"
+            
+            googleMapController.drawRoute(origin: origin, destination: destination, key: googleMapController.googleMapsKey) {
+                routes in
+                
+                if routes.count > 0 {
+                    
+                }
+            }
+        }
+    }
+    
+    func googleMapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D, googleMapController: GoogleMapController) {
+        self.view.endEditing(true)
+        googleMapController.clearMap()
     }
 
 }

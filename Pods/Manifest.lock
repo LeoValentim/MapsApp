@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.0.1)
   - GoogleMaps (2.3.1):
     - GoogleMaps/Maps (= 2.3.1)
   - GoogleMaps/Base (2.3.1)
@@ -12,6 +13,7 @@ PODS:
     - ObjectMapper (~> 2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0.0)
   - GoogleMaps
   - GooglePlaces
   - SwiftyJSON
@@ -28,12 +30,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/long/rides-ios-sdk.git
 
 SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UberRides: 96eb232374a6e8e616c20fdba83c2643a6ad08dc
 
-PODFILE CHECKSUM: 8e0146c48cacd5ecd106160ea1b720d01eecc16b
+PODFILE CHECKSUM: 523ea6a1713e2bcec4858de88ede12e93a2e8e13
 
 COCOAPODS: 1.2.1

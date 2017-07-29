@@ -13,6 +13,8 @@
 		0439B43C1F252C79005A06D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0439B43B1F252C79005A06D2 /* Assets.xcassets */; };
 		0439B43F1F252C79005A06D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0439B43D1F252C79005A06D2 /* LaunchScreen.storyboard */; };
 		0439B4471F254100005A06D2 /* CaronaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B4461F254100005A06D2 /* CaronaController.swift */; };
+		044529331F2CE72A005C85CD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044529321F2CE72A005C85CD /* Webservice.swift */; };
+		04C63B491F2D1663000DCD88 /* GoogleMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C63B481F2D1663000DCD88 /* GoogleMapController.swift */; };
 		A178BD081F2A9D74002AC824 /* ApiRideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178BD071F2A9D74002AC824 /* ApiRideController.swift */; };
 		A1CDD1221F2AA476002855A6 /* UberPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CDD1211F2AA476002855A6 /* UberPrices.swift */; };
 		D949753AA17D6F5FD9A9D1E6 /* Pods_MapsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12899AC4E6DC0C633F295AE7 /* Pods_MapsApp.framework */; };
@@ -27,6 +29,8 @@
 		0439B43E1F252C79005A06D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0439B4401F252C79005A06D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0439B4461F254100005A06D2 /* CaronaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaronaController.swift; sourceTree = "<group>"; };
+		044529321F2CE72A005C85CD /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		04C63B481F2D1663000DCD88 /* GoogleMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapController.swift; sourceTree = "<group>"; };
 		12899AC4E6DC0C633F295AE7 /* Pods_MapsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A01F3FBA503AC18897C243 /* Pods-MapsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapsApp/Pods-MapsApp.release.xcconfig"; sourceTree = "<group>"; };
 		5210050677918994531BF00F /* Pods-MapsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapsApp/Pods-MapsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 		0439B4331F252C79005A06D2 /* MapsApp */ = {
 			isa = PBXGroup;
 			children = (
+				044529311F2CE712005C85CD /* Helpers */,
 				A1CDD1201F2AA460002855A6 /* Models */,
 				0439B4481F25410B005A06D2 /* ViewControllers */,
 				0439B4341F252C79005A06D2 /* AppDelegate.swift */,
@@ -84,8 +89,17 @@
 			children = (
 				0439B4461F254100005A06D2 /* CaronaController.swift */,
 				A178BD071F2A9D74002AC824 /* ApiRideController.swift */,
+				04C63B481F2D1663000DCD88 /* GoogleMapController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		044529311F2CE712005C85CD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				044529321F2CE72A005C85CD /* Webservice.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		32BCE324BE3C7FCE95F651AD /* Pods */ = {
@@ -148,7 +162,6 @@
 				TargetAttributes = {
 					0439B4301F252C79005A06D2 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = R7KZBE2F63;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -239,6 +252,8 @@
 			files = (
 				A1CDD1221F2AA476002855A6 /* UberPrices.swift in Sources */,
 				A178BD081F2A9D74002AC824 /* ApiRideController.swift in Sources */,
+				044529331F2CE72A005C85CD /* Webservice.swift in Sources */,
+				04C63B491F2D1663000DCD88 /* GoogleMapController.swift in Sources */,
 				0439B4471F254100005A06D2 /* CaronaController.swift in Sources */,
 				0439B4371F252C79005A06D2 /* ViewController.swift in Sources */,
 				0439B4351F252C79005A06D2 /* AppDelegate.swift in Sources */,
@@ -367,7 +382,7 @@
 			baseConfigurationReference = 5210050677918994531BF00F /* Pods-MapsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R7KZBE2F63;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MapsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentim.leo.MapsApp;
@@ -381,7 +396,7 @@
 			baseConfigurationReference = 16A01F3FBA503AC18897C243 /* Pods-MapsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = R7KZBE2F63;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MapsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentim.leo.MapsApp;
