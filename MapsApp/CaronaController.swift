@@ -18,8 +18,8 @@ class CaronaController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pickupLocation = CLLocation(latitude: 37.775159, longitude: -122.417907)
-        let dropoffLocation = CLLocation(latitude: 37.6213129, longitude: -122.3789554)
+        let pickupLocation = CLLocation(latitude: 37.785834, longitude: -122.406417)
+        let dropoffLocation = CLLocation(latitude: 37.785834, longitude: -122.406417)
         
         //make sure that the pickupLocation and dropoffLocation is set in the Deeplink
         let builder = RideParametersBuilder()
