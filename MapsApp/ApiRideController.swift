@@ -15,7 +15,8 @@ class ApiRideController: UIViewController, GoogleMapControllerDelegate {
     @IBOutlet weak var locationsFieldsView: UIView!
     @IBOutlet weak var googleMapContainer: UIView!
     
-    var oldLocationsFieldsViewBounds: CGRect = CGRect.zero
+    var oldLocationsFieldsViewY: CGFloat = 0.0
+    var routeIsSetted = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,12 @@ class ApiRideController: UIViewController, GoogleMapControllerDelegate {
     
     func googleMapView(_ mapView: GMSMapView, didClear googleMapController: GoogleMapController) {
         
+        if self.routeIsSetted {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.locationsFieldsView.frame.origin.y = self.oldLocationsFieldsViewY
+            }, completion: nil)
+        }
+        self.routeIsSetted = false
     }
     
     func googleMapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D, googleMapController: GoogleMapController) {
@@ -51,7 +58,13 @@ class ApiRideController: UIViewController, GoogleMapControllerDelegate {
                 routes in
                 
                 if routes.count > 0 {
-                    
+                    if !self.routeIsSetted {
+                        self.oldLocationsFieldsViewY = self.locationsFieldsView.frame.origin.y
+                        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+                            self.locationsFieldsView.frame.origin.y -= self.locationsFieldsView.frame.height
+                        }, completion: nil)
+                    }
+                    self.routeIsSetted = true
                 }
             }
         }
