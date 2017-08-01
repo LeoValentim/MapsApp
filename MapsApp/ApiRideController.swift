@@ -19,6 +19,7 @@ class ApiRideController: UIViewController {
     @IBOutlet weak var destinoTextField: UITextField!
     @IBOutlet weak var locationsFieldsView: UIView!
     @IBOutlet weak var googleMapContainer: UIView!
+    @IBOutlet weak var selecionarView: UIView!
     
     var googleMapController: GoogleMapController!
     var origem: CLLocationCoordinate2D!
@@ -52,6 +53,12 @@ class ApiRideController: UIViewController {
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
+    
+    @IBAction func selecionarAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ModalServicosController") as! ModalServicosController
+        self.present(vc, animated: true, completion: nil)
+    }
 
 }
 
@@ -66,9 +73,19 @@ extension ApiRideController: GoogleMapControllerDelegate {
     
     func googleMapView(_ mapView: GMSMapView, didClear googleMapController: GoogleMapController) {
         if self.routeIsSetted {
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+            
+            let oldSelecionarViewHeight = self.selecionarView.frame.size.height
+            
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.locationsFieldsView.frame.origin.y = self.oldLocationsFieldsViewY
-            }, completion: nil)
+                self.selecionarView.frame.size.height = 0.0
+            }, completion: {
+                isAnimated in
+                if isAnimated {
+                    self.selecionarView.isHidden = true
+                    self.selecionarView.frame.size.height = oldSelecionarViewHeight
+                }
+            })
         }
         self.routeIsSetted = false
     }
@@ -108,9 +125,16 @@ extension ApiRideController: GoogleMapControllerDelegate {
             
             if routes.count > 0 {
                 if !self.routeIsSetted {
+                    
                     self.oldLocationsFieldsViewY = self.locationsFieldsView.frame.origin.y
+                    
+                    let oldSelecionarViewHeight = self.selecionarView.frame.size.height
+                    self.selecionarView.frame.size.height = 0.0
+                    self.selecionarView.isHidden = false
+                    
                     UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
                         self.locationsFieldsView.frame.origin.y -= self.locationsFieldsView.frame.height
+                        self.selecionarView.frame.size.height = oldSelecionarViewHeight
                     }, completion: nil)
                 }
                 self.routeIsSetted = true

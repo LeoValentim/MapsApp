@@ -15,6 +15,8 @@
 		0439B4471F254100005A06D2 /* CaronaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B4461F254100005A06D2 /* CaronaController.swift */; };
 		044529331F2CE72A005C85CD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044529321F2CE72A005C85CD /* Webservice.swift */; };
 		04C63B491F2D1663000DCD88 /* GoogleMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C63B481F2D1663000DCD88 /* GoogleMapController.swift */; };
+		A134D97D1F3135320065FBEE /* ServicoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134D97C1F3135320065FBEE /* ServicoCell.swift */; };
+		A134D9801F3135CD0065FBEE /* ModalServicosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134D97F1F3135CD0065FBEE /* ModalServicosController.swift */; };
 		A178BD081F2A9D74002AC824 /* ApiRideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178BD071F2A9D74002AC824 /* ApiRideController.swift */; };
 		A1CDD1221F2AA476002855A6 /* UberPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CDD1211F2AA476002855A6 /* UberPrices.swift */; };
 		D949753AA17D6F5FD9A9D1E6 /* Pods_MapsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12899AC4E6DC0C633F295AE7 /* Pods_MapsApp.framework */; };
@@ -34,6 +36,8 @@
 		12899AC4E6DC0C633F295AE7 /* Pods_MapsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A01F3FBA503AC18897C243 /* Pods-MapsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapsApp/Pods-MapsApp.release.xcconfig"; sourceTree = "<group>"; };
 		5210050677918994531BF00F /* Pods-MapsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapsApp/Pods-MapsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A134D97C1F3135320065FBEE /* ServicoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicoCell.swift; sourceTree = "<group>"; };
+		A134D97F1F3135CD0065FBEE /* ModalServicosController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalServicosController.swift; sourceTree = "<group>"; };
 		A178BD071F2A9D74002AC824 /* ApiRideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRideController.swift; sourceTree = "<group>"; };
 		A1CDD1211F2AA476002855A6 /* UberPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UberPrices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,7 @@
 		0439B4331F252C79005A06D2 /* MapsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A134D97B1F3135100065FBEE /* Cells */,
 				044529311F2CE712005C85CD /* Helpers */,
 				A1CDD1201F2AA460002855A6 /* Models */,
 				0439B4481F25410B005A06D2 /* ViewControllers */,
@@ -87,6 +92,7 @@
 		0439B4481F25410B005A06D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A134D97E1F3135B70065FBEE /* Modal */,
 				0439B4461F254100005A06D2 /* CaronaController.swift */,
 				A178BD071F2A9D74002AC824 /* ApiRideController.swift */,
 				04C63B481F2D1663000DCD88 /* GoogleMapController.swift */,
@@ -109,6 +115,22 @@
 				16A01F3FBA503AC18897C243 /* Pods-MapsApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A134D97B1F3135100065FBEE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A134D97C1F3135320065FBEE /* ServicoCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		A134D97E1F3135B70065FBEE /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				A134D97F1F3135CD0065FBEE /* ModalServicosController.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 		A1CDD1201F2AA460002855A6 /* Models */ = {
@@ -254,10 +276,12 @@
 				A1CDD1221F2AA476002855A6 /* UberPrices.swift in Sources */,
 				A178BD081F2A9D74002AC824 /* ApiRideController.swift in Sources */,
 				044529331F2CE72A005C85CD /* Webservice.swift in Sources */,
+				A134D9801F3135CD0065FBEE /* ModalServicosController.swift in Sources */,
 				04C63B491F2D1663000DCD88 /* GoogleMapController.swift in Sources */,
 				0439B4471F254100005A06D2 /* CaronaController.swift in Sources */,
 				0439B4371F252C79005A06D2 /* ViewController.swift in Sources */,
 				0439B4351F252C79005A06D2 /* AppDelegate.swift in Sources */,
+				A134D97D1F3135320065FBEE /* ServicoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
